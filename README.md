@@ -32,3 +32,10 @@ Bicubic convolution gives a C¹-continuous surface from a discrete grid, which m
 ## Edge you will hit
 
 Sampling exactly on a grid node returns the node value to within floating-point error. With `ZERO` mode, points whose entire 4×4 support falls outside the grid return `0` by definition rather than `NaN` — if you need to distinguish "outside" from "zero value", check the coordinates yourself before calling `sample`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
