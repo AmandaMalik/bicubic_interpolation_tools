@@ -1,6 +1,6 @@
 {
   "name": "bicubic-interpolation-tools",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Bicubic interpolation on 2D grids with Catmull-Rom kernel and selectable boundary modes",
   "type": "module",
   "main": "src/index.js",
